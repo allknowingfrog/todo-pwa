@@ -19,7 +19,7 @@ export default defineConfig({
         name: 'To Do',
         short_name: 'To Do',
         description: 'To Do Demo App',
-        theme_color: '#808080',
+        theme_color: '#ffffff',
         icons: [
           {
             src: 'pwa-192x192.png',
