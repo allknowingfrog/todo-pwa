@@ -1,5 +1,8 @@
 <script>
   import List from './lib/List.svelte'
+  import FetchDemo from './lib/FetchDemo.svelte'
+
+  let testMode = false
 </script>
 
 <main>
@@ -8,9 +11,20 @@
   </div>
   <h1>To Do</h1>
 
-  <div class="card">
-    <List />
+  <div>
+    <input type="checkbox" name="testMode" bind:checked={testMode}>
+    <label for="testMode">Test Mode</label>
   </div>
+
+  {#if testMode}
+    <div class="card">
+      <FetchDemo />
+    </div>
+  {:else}
+    <div class="card">
+      <List />
+    </div>
+  {/if}
 </main>
 
 <style>

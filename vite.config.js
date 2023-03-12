@@ -12,7 +12,11 @@ export default defineConfig({
         enabled: true
       },
       workbox: {
-        globPatterns: ['**/*.{js,css,html,svg,png}']
+        globPatterns: ['**/*.{js,css,html,svg,png}'],
+        runtimeCaching: [{
+          urlPattern: new RegExp('https://jsonplaceholder.typicode.com/todos/1'),
+          handler: 'CacheFirst'
+        }],
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
